@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_station_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_bg_blue"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/tv_station_name"
+        style="@style/textViewStyle"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/tv_station_num"
+        tools:text="香洲" />
+
+    <TextView
+        android:id="@+id/tv_bus_number"
+        style="@style/textViewStyleGray"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tv_station_num"
+        tools:text="\n粤C05672D" />
+
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    android:orientation="vertical">
+
+    <com.sim.traveltool.ui.view.TitleView
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftImageSrc="@mipmap/ic_to_left"
+        app:rightImageSrc="@drawable/refresh_bg"
+        app:showLeft="true"
+        app:showRight="true"
+        app:title="实时公交搜索" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_from_station"
+            style="@style/textViewStyle"
+            tools:text="起点站" />
+
+        <TextView
+            android:id="@+id/tv_reverse"
+            style="@style/textViewStyle"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text=" > > " />
+
+        <TextView
+            android:id="@+id/tv_to_station"
+            style="@style/textViewStyle"
+            tools:text="终点站" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textViewStyleGray"
+            android:text="首班:" />
+
+        <TextView
+            android:id="@+id/tv_begin_time"
+            style="@style/textViewStyleGray"
+            tools:text="06:00" />
+
+        <TextView
+            style="@style/textViewStyleGray"
+            android:layout_marginLeft="10dp"
+            android:text="末班:" />
+
+        <TextView
+            android:id="@+id/tv_end_time"
+            style="@style/textViewStyleGray"
+            tools:text="23:00" />
+
+        <TextView
+            style="@style/textViewStyleGray"
+            android:layout_marginLeft="10dp"
+            android:text="票价:" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/textViewStyleGray"
+            tools:text="1元" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rl_station_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>

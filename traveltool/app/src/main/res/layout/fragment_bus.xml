@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.sim.traveltool.ui.view.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="出行" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/loopviewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_gravity="bottom"
+            android:background="#33000000"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <!-- 标题-->
+            <TextView
+                android:id="@+id/loop_dec"
+                style="@style/textViewStyleGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/white"
+                tools:text="标题" />
+            <!-- 小圆点-->
+            <LinearLayout
+                android:id="@+id/ll_dots_loop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:padding="10dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.sim.baselibrary.views.CustomizeTabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:tabGravity="center"
+            app:tabIndicatorColor="#00000000"
+            app:tabMode="scrollable"
+            app:tabPaddingEnd="4dp"
+            app:tabPaddingStart="4dp"
+            app:tabSelectedTextColor="#0091EA"
+            app:tabTextAppearance="?android:textAppearanceMedium"
+            app:tabTextColor="@color/black" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>

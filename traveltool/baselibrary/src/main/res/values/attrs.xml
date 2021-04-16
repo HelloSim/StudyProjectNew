@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomImageView">
+        <attr name="src" />
+        <attr name="type" />
+        <attr name="borderRadius" />
+        <attr name="url_src" />
+    </declare-styleable>
+    <attr name="src" format="reference" />
+    <attr name="type">
+        <enum name="circle" value="0" /><!--圆形-->
+        <enum name="round" value="1" /><!--圆角-->
+        <enum name="url" value="2" /><!--网络图片-->
+        <enum name="circle_url" value="3" /><!--圆形网络图片-->
+        <enum name="round_url" value="4" /><!--圆角网络图片-->
+    </attr>
+    <attr name="borderRadius" format="dimension" />
+    <attr name="url_src" format="string" />
+
+
+    <declare-styleable name="SplitEditText">
+        <attr name="setStrokeWidth" format="dimension" />
+        <attr name="setBorderColor" format="color" />
+        <attr name="setInputBorderColor" format="color" />
+        <attr name="setFocusBorderColor" format="color" />
+        <attr name="setBoxBackgroundColor" format="color" />
+        <attr name="setBorderCornerRadius" format="dimension" />
+        <attr name="setBorderSpacing" format="dimension" />
+        <attr name="setMaxLength" format="integer" />
+        <attr name="setBorderStyle" format="enum">
+            <enum name="box" value="0" />
+            <enum name="line" value="1" />
+        </attr>
+        <attr name="setTextStyle" format="enum">
+            <enum name="plain_text" value="0" /> <!--明文-->
+            <enum name="cipher_text" value="1" /> <!--密文-->
+        </attr>
+        <attr name="setCipherMask" format="string" />
+        <attr name="setFakeBoldText" format="boolean" />
+    </declare-styleable>
+
+</resources>
