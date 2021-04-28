@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <headerTitle :title="title"></headerTitle>
+    <headerTitle></headerTitle>
     <router-view></router-view>
-    <footerNav @getTitle="getTitle"></footerNav>
+    <footerNav></footerNav>
   </div>
 </template>
 
@@ -11,19 +11,7 @@ import footerNav from './components/footerNav.vue'
 import headerTitle from './components/headerTitle.vue'
 export default {
   data() {
-    return {
-      drawer: false,
-      direction: 'ltr',
-      title: '首页',
-    }
-  },
-  methods: {
-    handleClose(done) {
-      done()
-    },
-    getTitle: function (data) {
-      this.title = data
-    },
+    return {}
   },
   components: {
     footerNav,

@@ -7,11 +7,13 @@ import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import Vant from "vant";
 import "vant/lib/index.css";
+import Bmob from "hydrogen-js-sdk";
 
 Vue.use(ElementUI);
 Vue.use(Vant);
-Vue.config.productionTip = false;
-
+Vue.prototype.Bmob = Bmob;
+Vue.config.productionTip = true;
+Bmob.initialize("e35d936748f5a791", "176186");
 /* eslint-disable no-new */
 new Vue({
   //绑定组件

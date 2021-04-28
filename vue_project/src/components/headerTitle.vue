@@ -1,15 +1,7 @@
 <template>
   <div class="bg">
-    <van-icon v-if="showBack" name="arrow-left"></van-icon>
-    <van-icon v-else name="apps-o" @click="drawer = true"></van-icon>
+    <van-icon v-if="showBack" name="arrow-left" v-on:click="back"></van-icon>
     <p>{{ title }}</p>
-    <el-drawer
-      class="drawer"
-      :visible.sync="drawer"
-      :direction="direction"
-      :show-close="false"
-      :size="200"
-    ></el-drawer>
   </div>
 </template>
 
@@ -17,12 +9,30 @@
 export default {
   data() {
     return {
+      title: 'home',
       showBack: false,
-      drawer: false,
-      direction: 'ltr',
     }
   },
-  props: ['title'],
+  methods: {
+    back: function (event) {
+      this.$router.go(-1)
+    },
+  },
+  watch: {
+    $route(to, from) {
+      this.title = to.name
+      if (
+        to.name == 'home' ||
+        to.name == 'bus' ||
+        to.name == 'record' ||
+        to.name == 'user'
+      ) {
+        this.showBack = false
+      } else {
+        this.showBack = true
+      }
+    },
+  },
 }
 </script>
 
@@ -37,7 +47,5 @@ export default {
   align-items: center;
   /* justify-content: center; */
   text-indent: 1em;
-}
-.drawer {
 }
 </style>
