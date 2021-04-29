@@ -7,6 +7,7 @@ import bus from "@/views/bus/bus.vue";
 import record from "@/views/record/record.vue";
 import user from "@/views/user/user.vue";
 import userInfo from "@/views/user/userInfo.vue";
+import userCollected from "@/views/user/userCollected.vue";
 
 Vue.use(Router);
 
@@ -39,14 +40,14 @@ export default new Router({
       component: user
     },
     {
-      path: "/userInfo",
+      path: "/user/userInfo",
       name: "userInfo",
       component: userInfo
     },
     {
-      path: "/collected",
-      name: "collected",
-      component: record
+      path: "/user/userCollected",
+      name: "userCollected",
+      component: userCollected
     }
   ]
 });

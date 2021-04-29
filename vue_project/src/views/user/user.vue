@@ -2,8 +2,8 @@
   <div>
     <van-cell-group title="用户">
       <van-cell v-if="!isLogin" center icon="user-o" title="未登录" @click="showPopup" />
-      <van-cell v-else center icon="user-o" :title="userName" to="/userInfo" />
-      <van-cell center icon="label-o" title="收藏" to="/collected" />
+      <van-cell v-else center icon="user-o" :title="userName" to="/user/userInfo" />
+      <van-cell v-if="isLogin" center icon="label-o" title="收藏" to="/user/userCollected" />
     </van-cell-group>
     <van-cell-group title="设置">
       <van-cell center icon="setting-o" title="设置" />
@@ -43,9 +43,10 @@ export default {
           this.isLogin = true
           this.userName = values.userName
           this.password = values.password
-          sessionStorage.setItem('userName', this.userName)
           sessionStorage.setItem('objectId', res.objectId)
           sessionStorage.setItem('sessionToken', res.sessionToken)
+          sessionStorage.setItem('userName', this.userName)
+          sessionStorage.setItem('mobilePhoneNumber', res.mobilePhoneNumber)
         })
         .catch((err) => {
           this.$toast({

@@ -3,17 +3,15 @@
 import Vue from "vue";
 import App from "./App";
 import router from "./router";
-import ElementUI from "element-ui";
-import "element-ui/lib/theme-chalk/index.css";
-import Vant from "vant";
-import "vant/lib/index.css";
-import Bmob from "hydrogen-js-sdk";
 
-Vue.use(ElementUI);
-Vue.use(Vant);
-Vue.prototype.Bmob = Bmob;
+import axios from "axios";
+import VueAxios from "vue-axios";
+import "./plugins/element.js";
+import "./plugins/vant.js";
+import "./plugins/bmob.js";
+
+Vue.use(VueAxios, axios);
 Vue.config.productionTip = true;
-Bmob.initialize("e35d936748f5a791", "176186");
 /* eslint-disable no-new */
 new Vue({
   //绑定组件

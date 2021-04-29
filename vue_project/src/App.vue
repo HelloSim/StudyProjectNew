@@ -7,15 +7,15 @@
 </template>
 
 <script>
-import footerNav from './components/footerNav.vue'
-import headerTitle from './components/headerTitle.vue'
+import FooterNav from './components/footerNav.vue'
+import HeaderTitle from './components/headerTitle.vue'
 export default {
   data() {
     return {}
   },
   components: {
-    footerNav,
-    headerTitle,
+    FooterNav,
+    HeaderTitle,
   },
 }
 </script>
