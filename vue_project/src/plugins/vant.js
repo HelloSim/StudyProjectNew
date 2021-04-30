@@ -22,7 +22,8 @@ import {
   Tab,
   Tabs,
   Search,
-  Calendar
+  Calendar,
+  Toast
 } from "vant";
 
 Vue.use(Tabbar)
@@ -45,4 +46,5 @@ Vue.use(Tabbar)
   .use(Tab)
   .use(Tabs)
   .use(Search)
-  .use(Calendar);
+  .use(Calendar)
+  .use(Toast);
