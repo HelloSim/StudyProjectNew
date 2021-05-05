@@ -8,13 +8,13 @@
     <van-cell-group title="设置">
       <van-cell center icon="setting-o" title="设置" />
     </van-cell-group>
-    <van-popup v-model="showLogin" :round='true'>
+    <van-popup v-model="showLogin" :round="true">
       <van-form @submit="onSubmit">
         <van-field v-model="userName" name="userName" label="用户名" placeholder="用户名"
           :rules="[{ required: true, message: '请填写用户名' }]" />
         <van-field v-model="password" type="password" name="password" label="密码" placeholder="密码"
           :rules="[{ required: true, message: '请填写密码' }]" />
-        <div style="margin: 16px;">
+        <div style="margin: 16px">
           <van-button round block type="info" native-type="submit">登录</van-button>
         </div>
       </van-form>
@@ -26,9 +26,9 @@
 export default {
   data() {
     return {
-      isLogin: false,
+      isLogin: Bmob.User.current() == null ? false : true,
       showLogin: false,
-      userName: '',
+      userName: Bmob.User.current() == null ? '' : Bmob.User.current().username,
       password: '',
     }
   },
@@ -41,12 +41,7 @@ export default {
       Bmob.User.login(values.userName, values.password)
         .then((res) => {
           this.isLogin = true
-          this.userName = values.userName
-          this.password = values.password
-          sessionStorage.setItem('objectId', res.objectId)
-          sessionStorage.setItem('sessionToken', res.sessionToken)
-          sessionStorage.setItem('userName', this.userName)
-          sessionStorage.setItem('mobilePhoneNumber', res.mobilePhoneNumber)
+          this.userName = Bmob.User.current().username
         })
         .catch((err) => {
           this.$toast({
@@ -54,15 +49,6 @@ export default {
           })
         })
     },
-  },
-  created: function () {
-    const username = sessionStorage.getItem('userName')
-    const objectId = sessionStorage.getItem('objectId')
-    const sessionToken = sessionStorage.getItem('sessionToken')
-    if (username && objectId && sessionToken) {
-      this.isLogin = true
-      this.userName = username
-    }
   },
 }
 </script>

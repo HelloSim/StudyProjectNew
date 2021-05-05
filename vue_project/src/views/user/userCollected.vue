@@ -21,7 +21,7 @@ export default {
   methods: {
     onLoad() {
       const query = Bmob.Query('NewsBean')
-      query.equalTo('user', '==', sessionStorage.getItem('objectId'))
+      query.equalTo('user', '==', Bmob.User.current().objectId)
       query.find().then((res) => {
         this.list = res
         this.loading = false

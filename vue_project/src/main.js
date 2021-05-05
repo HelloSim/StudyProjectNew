@@ -6,7 +6,7 @@ import router from "./router";
 
 import axios from "axios";
 import VueAxios from "vue-axios";
-import "./plugins/element.js";
+// import "./plugins/element.js";
 import "./plugins/vant.js";
 import "./plugins/bmob.js";
 

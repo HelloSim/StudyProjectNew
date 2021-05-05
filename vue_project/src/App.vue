@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <headerTitle></headerTitle>
+    <van-sticky>
+      <headerTitle></headerTitle>
+    </van-sticky>
     <router-view></router-view>
     <footerNav></footerNav>
   </div>
@@ -9,6 +11,18 @@
 <script>
 import FooterNav from './components/footerNav.vue'
 import HeaderTitle from './components/headerTitle.vue'
+//设置根元素字体大小
+document.documentElement.style.fontSize =
+  document.documentElement.clientWidth / 10 + 'px'
+//监听屏幕尺寸的变化
+console.log(document.documentElement.style.fontSize)
+
+window.addEventListener('resize', () => {
+  document.documentElement.style.fontSize =
+    document.documentElement.clientWidth / 10 + 'px'
+  console.log(document.documentElement.clientWidth / 10 + 'px')
+})
+
 export default {
   data() {
     return {}
@@ -27,5 +41,10 @@ body {
 }
 .container {
   display: inline;
+}
+@media only screen and (min-width: 1024px) {
+  app {
+    display: none;
+  }
 }
 </style>

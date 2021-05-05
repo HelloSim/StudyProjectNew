@@ -14,9 +14,9 @@
 export default {
   data() {
     return {
-      objectId: sessionStorage.getItem('objectId'),
-      userName: sessionStorage.getItem('userName'),
-      mobilePhoneNumber: sessionStorage.getItem('mobilePhoneNumber'),
+      objectId: Bmob.User.current().objectId,
+      userName: Bmob.User.current().username,
+      mobilePhoneNumber: Bmob.User.current().mobilePhoneNumber,
     }
   },
   methods: {
@@ -27,10 +27,6 @@ export default {
         })
         .then(() => {
           Bmob.User.logout()
-          sessionStorage.removeItem('objectId')
-          sessionStorage.removeItem('sessionToken')
-          sessionStorage.removeItem('userName')
-          sessionStorage.removeItem('mobilePhoneNumber')
           this.$router.back(-1)
         })
         .catch(() => {})

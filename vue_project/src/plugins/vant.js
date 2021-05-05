@@ -2,6 +2,7 @@ import Vue from "vue";
 import "vant/lib/index.css";
 
 import {
+  Sticky,
   Tabbar,
   TabbarItem,
   Icon,
@@ -26,7 +27,8 @@ import {
   Toast
 } from "vant";
 
-Vue.use(Tabbar)
+Vue.use(Sticky)
+  .use(Tabbar)
   .use(TabbarItem)
   .use(Icon)
   .use(Cell)
